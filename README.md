@@ -134,6 +134,11 @@ Use Postman Collection or the published documentation above.
 
 ---
 
+## 📬 Postman Collection
+Import it from: docs/postman_collection.json
+
+---
+
 ## 💡 Future Improvements
 
 * 🔴 Real-time notifications (WebSockets)

@@ -1,0 +1,867 @@
+{
+  "info": {
+    "_postman_id": "c3c60bf6-219b-470d-83e2-b7afa8f748e0",
+    "name": "Blog-Project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "46890560"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "marey",
+                  "type": "text",
+                  "uuid": "00fd3dea-6765-4847-9345-5eceed0ce397"
+                },
+                {
+                  "key": "email",
+                  "value": "marey@gmail.com",
+                  "type": "text",
+                  "uuid": "59a02a1e-8208-4181-8b49-aee33be7fd52"
+                },
+                {
+                  "key": "password",
+                  "value": "123456789",
+                  "type": "text",
+                  "uuid": "41e46a98-0360-48b8-b77c-219b14ed5c81"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/register",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "test@example.com",
+                  "type": "text",
+                  "uuid": "59a02a1e-8208-4181-8b49-aee33be7fd52"
+                },
+                {
+                  "key": "password",
+                  "value": "password",
+                  "type": "text",
+                  "uuid": "41e46a98-0360-48b8-b77c-219b14ed5c81"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "xYGzVprCXe0aFPzeinkRO3MVrMjHSqtsEzO6ulJ663dd947c",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "marey@gmail.com",
+                  "type": "text",
+                  "uuid": "59a02a1e-8208-4181-8b49-aee33be7fd52",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "123456789",
+                  "type": "text",
+                  "uuid": "41e46a98-0360-48b8-b77c-219b14ed5c81",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/logout",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "Get Posts",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "xYGzVprCXe0aFPzeinkRO3MVrMjHSqtsEzO6ulJ663dd947c",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "marey@gmail.com",
+                  "type": "text",
+                  "uuid": "59a02a1e-8208-4181-8b49-aee33be7fd52",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "123456789",
+                  "type": "text",
+                  "uuid": "41e46a98-0360-48b8-b77c-219b14ed5c81",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/posts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store Post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "d91cc1e5-420f-4dec-a13d-e84bb62e45e1"
+                },
+                {
+                  "key": "content",
+                  "value": "Iphone 17 pro max",
+                  "type": "text",
+                  "uuid": "a9970062-cdba-4d0d-a586-c677cbd0081e"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "35235105-1ff9-4db5-b5fe-5f508dae06be",
+                  "src": "/C:/Users/youss/Downloads/iphone.jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/posts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Post",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "d91cc1e5-420f-4dec-a13d-e84bb62e45e1"
+                },
+                {
+                  "key": "content",
+                  "value": "Iphone 17 pro ",
+                  "type": "text",
+                  "uuid": "a9970062-cdba-4d0d-a586-c677cbd0081e"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "35235105-1ff9-4db5-b5fe-5f508dae06be",
+                  "src": "/C:/Users/youss/Downloads/iphone.jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/posts/51",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts",
+                "51"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show Post",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "xYGzVprCXe0aFPzeinkRO3MVrMjHSqtsEzO6ulJ663dd947c",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "marey@gmail.com",
+                  "type": "text",
+                  "uuid": "59a02a1e-8208-4181-8b49-aee33be7fd52",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "123456789",
+                  "type": "text",
+                  "uuid": "41e46a98-0360-48b8-b77c-219b14ed5c81",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/posts/51",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts",
+                "51"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Post",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "d91cc1e5-420f-4dec-a13d-e84bb62e45e1"
+                },
+                {
+                  "key": "content",
+                  "value": "Iphone 17 pro ",
+                  "type": "text",
+                  "uuid": "a9970062-cdba-4d0d-a586-c677cbd0081e"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "35235105-1ff9-4db5-b5fe-5f508dae06be",
+                  "src": "/C:/Users/youss/Downloads/iphone.jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/posts/51",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts",
+                "51"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Profile",
+      "item": [
+        {
+          "name": "Get Profile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "LJ8mqhqcE8wJLo6jlczywv8t9Jxqxrp5z1gLSchp9e46c6a3",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "d91cc1e5-420f-4dec-a13d-e84bb62e45e1"
+                },
+                {
+                  "key": "content",
+                  "value": "Iphone 17 pro max",
+                  "type": "text",
+                  "uuid": "a9970062-cdba-4d0d-a586-c677cbd0081e"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "35235105-1ff9-4db5-b5fe-5f508dae06be",
+                  "src": "/C:/Users/youss/Downloads/iphone.jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/profile",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show Profile",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "X574in6SDUoneM14JfXN64tRgM40q3rulYfMSXrTefeecdde",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/profile/Test User",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "profile",
+                "Test User"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upload Avatar",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "X574in6SDUoneM14JfXN64tRgM40q3rulYfMSXrTefeecdde",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "e6c8e1a4-5a48-4d3c-8b21-152443e0c98e",
+                  "src": "/C:/Users/youss/Downloads/opinion-leader-rgb-color-icon-personal-brand-positive-impact-creating-man-with-star-on-his-chest-individual-identity-social-media-influencer-unique-branding-isolated-illustration-vector.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/profile/avatar",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "profile",
+                "avatar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "X574in6SDUoneM14JfXN64tRgM40q3rulYfMSXrTefeecdde",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "youssef",
+                  "type": "text",
+                  "uuid": "b9c4ee75-6ee0-414a-a8ba-49d740676c51"
+                },
+                {
+                  "key": "email",
+                  "value": "test@example.com",
+                  "type": "text",
+                  "uuid": "bb3ebe42-c427-4b4a-a320-9ea4e7602d6a"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "87780d49-09fe-487d-92c6-ea5e7cdd7246",
+                  "src": "/C:/Users/youss/Downloads/images (3).jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/profile",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Avatar",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "X574in6SDUoneM14JfXN64tRgM40q3rulYfMSXrTefeecdde",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Test User",
+                  "type": "text",
+                  "uuid": "b9c4ee75-6ee0-414a-a8ba-49d740676c51"
+                },
+                {
+                  "key": "email",
+                  "value": "test@example.com",
+                  "type": "text",
+                  "uuid": "bb3ebe42-c427-4b4a-a320-9ea4e7602d6a"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "87780d49-09fe-487d-92c6-ea5e7cdd7246",
+                  "src": "/C:/Users/youss/Downloads/images (3).jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/profile/avatar",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "profile",
+                "avatar"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comment",
+      "item": [
+        {
+          "name": "Store Comment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "1dca358a-1afd-42a8-9244-1a0bd1b687a2"
+                },
+                {
+                  "key": "post_id",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "bd432e31-16e5-4e8c-91ca-945ef52bc8e4"
+                },
+                {
+                  "key": "content",
+                  "value": "test ",
+                  "type": "text",
+                  "uuid": "2a267ca2-abb1-4545-8584-98c98e17bbc5"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/comments",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Comment",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "1dca358a-1afd-42a8-9244-1a0bd1b687a2"
+                },
+                {
+                  "key": "post_id",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "bd432e31-16e5-4e8c-91ca-945ef52bc8e4"
+                },
+                {
+                  "key": "content",
+                  "value": "test test",
+                  "type": "text",
+                  "uuid": "2a267ca2-abb1-4545-8584-98c98e17bbc5"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/comments/152",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "comments",
+                "152"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Comment",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "1dca358a-1afd-42a8-9244-1a0bd1b687a2"
+                },
+                {
+                  "key": "post_id",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "bd432e31-16e5-4e8c-91ca-945ef52bc8e4"
+                },
+                {
+                  "key": "content",
+                  "value": "test ",
+                  "type": "text",
+                  "uuid": "2a267ca2-abb1-4545-8584-98c98e17bbc5"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/comments/152",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "comments",
+                "152"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Likes",
+      "item": [
+        {
+          "name": "Store Like",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "YCDQKnjVa8XtvqhCZ2SoFAxEeYlLLeRPvyW9Pf4ca687acf1",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{base_url}}/posts/3/like",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts",
+                "3",
+                "like"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Follow",
+      "item": [
+        {
+          "name": "Store Follow",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "X574in6SDUoneM14JfXN64tRgM40q3rulYfMSXrTefeecdde",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{base_url}}/follow/3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "follow",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Notifications",
+      "item": [
+        {
+          "name": "Get Notifications",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "SERtYc6EaeccD0XMrm4d2l8TyDjo4sl5Jl2hsCzvf964e0a5",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{base_url}}/notifications",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "notifications"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Read Notifications",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "SERtYc6EaeccD0XMrm4d2l8TyDjo4sl5Jl2hsCzvf964e0a5",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{base_url}}/notifications/read",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "notifications",
+                "read"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
